@@ -2,7 +2,9 @@ class CatsController < ApplicationController
   before_action :set_cat, only: %i[ show edit update destroy ]
 
   def index
-    @cats = Cat.page(params[:page])
+    @search = Cat.ransack(params[:q])
+    @search.sorts = 'id desc' if @search.sorts.empty?
+    @cats = @search.result.page(params[:page])
   end
 
   # GET /cats/1
