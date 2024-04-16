@@ -2,7 +2,6 @@ class CatsController < ApplicationController
   before_action :set_cat, only: %i[ show edit update destroy ]
 
   def index
-    @cats = Cat.all
     @cats = Cat.page(params[:page])
   end
 
