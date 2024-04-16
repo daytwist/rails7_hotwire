@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      cat: ねこ
+      dog: いぬ
+      rabbit: うさぎ
+      owl: ふくろう
+      hedgehog: はりねずみ
+    attributes:
+      cat:
+        name: 名前
+        age: 年齢
+      dog:
+        name: 名前
+        age: 年齢
+      rabbit:
+        name: 名前
+        age: 年齢
+      owl:
+        name: 名前
+        age: 年齢
+      hedgehog:
+        name: 名前
+        age: 年齢
