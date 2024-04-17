@@ -2,6 +2,3 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
-
-// TODO: チュートリアル2で有効化する
-Turbo.session.drive = false
