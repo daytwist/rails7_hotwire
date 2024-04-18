@@ -1,5 +1,5 @@
 <%= turbo_frame_tag cat do %>
-  <%= bootstrap_form_with(model: cat, data: { action: "turbo:submit-end->modal#close" }) do |form| %>
+  <%= bootstrap_form_with(model: cat, data: { action: "turbo:submit-end->modal#close" }, html: { novalidate: true }) do |form| %>
     <%= form.text_field :name %>
     <%= form.text_field :age %>
     <%= form.primary %>
