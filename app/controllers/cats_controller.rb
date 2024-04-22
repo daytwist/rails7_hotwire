@@ -24,6 +24,7 @@ class CatsController < ApplicationController
     @cat = Cat.new(cat_params)
 
     if @cat.save
+      @cat.broadcast_prepend_to("cats")
       flash.now.notice = "ねこを登録しました。"
     else
       render :new, status: :unprocessable_entity
@@ -32,6 +33,7 @@ class CatsController < ApplicationController
 
   def update
     if @cat.update(cat_params)
+      @cat.broadcast_replace_to("cats")
       flash.now.notice = "ねこを更新しました。"
     else
       render :edit, status: :unprocessable_entity
@@ -40,6 +42,7 @@ class CatsController < ApplicationController
 
   def destroy
     @cat.destroy!
+    @cat.broadcast_remove_to("cats")
     flash.now.notice = "ねこを削除しました。"
   end
 
